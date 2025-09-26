@@ -4,11 +4,12 @@ import boto3
 from typing import Tuple, List, Dict
 from dotenv import load_dotenv
 import json
+import os
 
 load_dotenv()
 
-S3_VECTOR_BUCKET_NAME="innovacion-knowledge-vector-bucket"
-UMM_S3_VECTOR_INDEX="umm-test-s3-vector-index"
+S3_VECTOR_BUCKET_NAME=os.getenv("S3_VECTOR_BUCKET_NAME")
+UMM_S3_VECTOR_INDEX=os.getenv("UMM_S3_VECTOR_INDEX")
 
 def embed_query(query: str) -> List[Tuple[List[float], str]]:
 
